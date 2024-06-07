@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Item</title>
     <style>
-        body {
+       body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f4f4f4;
+            background-color: black;
         }
         .navbar {
             width: 100%;
-            background-color: #333;
+            background-color: black;
             overflow: hidden;
         }
         .navbar a {
-            float: left;
+            float: right;
             display: block;
             color: white;
             text-align: center;
@@ -34,23 +34,27 @@
             padding: 20px;
         }
         .form-container {
-            background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin: 20px auto;
             width: 100%;
             max-width: 600px;
+            background: linear-gradient(to right,black, darkred,black);
+            padding: 80px;
+            text-align: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
         }
         .form-container h2 {
             margin-bottom: 20px;
             font-size: 24px;
-            color: #333;
+            color: white;
         }
         .form-container label {
             display: block;
             margin-bottom: 5px;
-            color: #555;
+            color: white;
         }
         .form-container input[type="text"],
         .form-container textarea,
@@ -70,15 +74,16 @@
             min-height: 80px;
         }
         .form-container button {
-            width: 100%;
+            width: calc(100% - 22px);
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background-color: #007bff;
+            background-color: black;
             color: #fff;
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s;
+            
         }
         .form-container button:hover {
             background-color: #0056b3;
@@ -100,9 +105,9 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="{{ url('categories') }}">Home</a>
-        <a href="{{ url('create') }}">Add Items</a>
-        <a href="#about">About</a>
+    <a href="{{ url('create') }}">Add Items</a>
+        <a href="{{ url('categories') }}">Inventory List</a>
+        <a href="{{ url('') }}">Home</a>
     </div>
 
     <div class="container">

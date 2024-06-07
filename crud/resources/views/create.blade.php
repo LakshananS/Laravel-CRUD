@@ -10,15 +10,15 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f4f4f4;
+            background-color: black;
         }
         .navbar {
             width: 100%;
-            background-color: #333;
+            background-color: black;
             overflow: hidden;
         }
         .navbar a {
-            float: left;
+            float: right;
             display: block;
             color: white;
             text-align: center;
@@ -33,37 +33,28 @@
             margin: 0 auto;
             padding: 20px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #fff;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
         .form-container {
-            background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin: 20px auto;
             width: 100%;
             max-width: 600px;
+            background: linear-gradient(to right,black, darkred,black);
+            padding: 80px;
+            text-align: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
         }
         .form-container h2 {
             margin-bottom: 20px;
             font-size: 24px;
-            color: #333;
+            color: white;
         }
         .form-container label {
             display: block;
             margin-bottom: 5px;
-            color: #555;
+            color: white;
         }
         .form-container input[type="text"],
         .form-container textarea,
@@ -83,15 +74,16 @@
             min-height: 80px;
         }
         .form-container button {
-            width: 100%;
+            width: calc(100% - 22px);
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background-color: #000100;
+            background-color: black;
             color: #fff;
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s;
+            
         }
         .form-container button:hover {
             background-color: #0056b3;
@@ -102,15 +94,20 @@
             margin-bottom: 20px;
             color: #fff;
             font-size: 16px;
+        }
+        .alert-success {
             background-color: #28a745;
+        }
+        .alert-error {
+            background-color: #dc3545;
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="{{ url('categories') }}">Home</a>
         <a href="{{ url('create') }}">Add Items</a>
-        <a href="#about">About</a>
+        <a href="{{ url('categories') }}">Inventory List</a>
+        <a href="{{ url('') }}">Home</a>
     </div>
 
     <div class="container">

@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <style>
-       body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: black;
             box-sizing: border-box;
         }
         .navbar {
-            background-color: #333;
+            background-color: black;
             overflow: hidden;
             width: 100%;
         }
         .navbar a {
-            float: left;
+            float: right;
             display: block;
             color: white;
             text-align: center;
@@ -30,10 +30,11 @@
             background-color: #575757;
         }
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
+            background: linear-gradient(to right,black, darkred,black);
+            padding: 80px;
+            text-align: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
         }
         table {
             width: 100%;
@@ -46,17 +47,18 @@
         }
         th, td {
             padding: 12px;
-            text-align: left;
+            text-align: center;
         }
         th {
-            background-color: #f4f4f4;
+            background-color: black;
         }
-        tr:nth-child(even) {
+        tr:nth-child {
             background-color: #f9f9f9;
         }
         h1 {
             margin-left: 20px;
-            color: #333;
+            color: white;
+            text-align: center;
         }
         a {
             display: inline-block;
@@ -66,7 +68,7 @@
             color: #fff;
             text-align: center;
             text-decoration: none;
-            background-color: #000100; /* Primary color */
+            background-color: #000100;
             border: none;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -79,14 +81,14 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
             transform: translateY(-2px);
         }
-
     </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="{{url('create')}}">Add Items</a>
-        <a href="#about">About</a>
+    <a href="{{ url('create') }}">Add Items</a>
+        <a href="{{ url('categories') }}">Inventory List</a>
+        <a href="{{ url('') }}">Home</a>
+        
     </div>
 
     <h1>Inventry Items </h1>
