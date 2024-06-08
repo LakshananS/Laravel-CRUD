@@ -36,6 +36,12 @@ class CategoryController extends Controller
         return view('edit', compact('category'));
     }
 
+    public function single(int $id)
+    {
+        $category = Category::findOrFail($id);
+        return view('single', compact('category'));
+    }
+
     public function update(Request $request, int $id) {
         $request->validate([
             'name' => 'required|max:255',

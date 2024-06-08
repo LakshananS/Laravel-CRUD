@@ -81,6 +81,63 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
             transform: translateY(-2px);
         }
+        .image img{
+            width: 200px;
+            height: 200px;
+            margin-top:40px;
+            margin-left:150px;
+            border-radius:20px
+        }
+        .rule {
+            font-size: 20px;
+            font-weight: italic;
+            text-align: center;
+            margin-top:80px;
+            color:white;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: italic;
+            text-align: center;
+            margin-top:-150px;
+            color:white;
+            margin-left:300px;
+            font-size:40px;
+
+        }
+        .social {
+            font-size: 20px;
+            font-weight: italic;
+            text-align: center;
+            color: white;
+            margin-bottom: 20px; 
+                }
+
+        .s-container {
+            display: flex;
+            flex-direction: row; 
+            align-items: center; 
+            width: 200px; 
+            margin-left: 300px;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .social-con {
+            display: flex;
+            align-items: center;
+            margin-top: 20px; 
+        }
+
+        .social-con img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px; 
+            margin-top:-20px
+        }
+        footer{
+            margin-top:100px;
+}
     </style>
 </head>
 <body>
@@ -91,7 +148,7 @@
         
     </div>
 
-    <h1>Inventry Items </h1>
+    <h1>INVENTRY ITEMS</h1>
 
     <div class="container">
         <table>
@@ -101,6 +158,7 @@
                     <th>Name</th>
                     <th>Description</th>
                     <th>Quantity</th>
+                    <th>View</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -108,10 +166,11 @@
             <tbody>
                 @foreach ($categories as $item)
                 <tr>
-                    <td>{{$item->id}}</td>
+                    <td>{{$item->id}}></td>
                     <td>{{$item->name}}</td>
                     <td>{{$item->description}}</td>
                     <td>{{$item->quantity}}</td>
+                    <td><a href="{{url('categories/'.$item->id.'/single')}}">View</a></td>
                     <td><a href="{{url('categories/'.$item->id.'/edit')}}">Edit</a></td>
                     <td><a href="{{url('categories/'.$item->id.'/delete')}}">Delete</a></td>
                 </tr>
@@ -119,5 +178,30 @@
             </tbody>
         </table>
     </div>
+    <footer>
+        <div class="image">
+            <img src="/images/logo.jpeg"/>
+            <div class="title">  Inventory Management System Web Application </div>
+            <div class="s-container">
+                <div class="social-con">
+                    <img src="https://i.pinimg.com/originals/80/4d/39/804d3943dae3239f92626dae897f7554.jpg"/>
+                    <div class="social">  Facebook </div>
+                </div>
+                <div class="social-con">
+                    <img src="https://i.pinimg.com/originals/21/67/54/21675440615d287ae7e46ae4f17ac976.png"/>
+                    <div class="social">  Instagram </div>
+                </div>
+                <div class="social-con">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCx7oddoCNVOd3JCLnphcRw5rtpzXZhtN4mQ&s"/>
+                    <div class="social">  Linkedin </div>
+                </div>
+                <div class="social-con">
+                    <img src="https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector_715895-569.jpg"/>
+                    <div class="social">  Twitter </div>
+                </div>
+        </div>
+        <div class="rule">@ All rights reserved. Created by - Siva Lakshanan </div>
+        </div>
+    </footer>
 </body>
 </html>

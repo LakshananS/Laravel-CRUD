@@ -9,6 +9,7 @@ Route::post('create', [CategoryController::class, 'store']);
 Route::get('categories/{id}/edit',[CategoryController::class, 'edit']);
 Route::put('update/{id}', [CategoryController::class, 'update'])->name('categories.update');
 Route::get('categories/{id}/delete', [CategoryController::class, 'destroy']);
+Route::get('categories/{id}/single', [CategoryController::class, 'single']);
 
 Route::get('/', function () {
     return view('welcome');

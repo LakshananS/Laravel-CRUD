@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Item Details</title>
     <style>
-        body {
+       body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
             box-sizing: border-box;
-            
+            background-color: black;
         }
         .navbar {
+            width: 100%;
             background-color: black;
             overflow: hidden;
-            width: 100%;
         }
         .navbar a {
             float: right;
@@ -25,7 +24,6 @@
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
-            transition: background-color 0.3s;
         }
         .navbar a:hover {
             background-color: #575757;
@@ -34,74 +32,49 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            box-sizing: border-box;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        h1 {
-            margin-left: 20px;
-            color: white;
-        }
-        .text {
-            font-size: 60px;
-            font-weight: bold;
-            text-align: center;
-            color: white;
-            z-index: 10;
-            position: relative;
-            opacity: 100%;
-        }
-        .con {
-            border: solid 2px red;
-            border-radius: 20px;
-            background-color: rgba(255, 255, 255, 0.1); 
-        }
-       .paragraph {
-            font-size: 20px;
-            font-weight: italic;
-            text-align: center;
-            margin-top: 275px;
-            color: white;
-            font-family: 'Times New Roman', Times, serif;
-            letter-spacing: 1.5px;
-        }
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px; /* Adjust based on your needs */
-        }
-        .image-container img {
-            width: 400px;
-            height: 400px;
+        .form-container {
+            padding: 20px;
             border-radius: 10px;
-            margin-top:250px;
-        }
-        .gradient-container {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 100%;
+            max-width: 600px;
             background: linear-gradient(to right,black, darkred,black);
             padding: 80px;
             text-align: center;
             color: #fff;
             font-family: Arial, sans-serif;
         }
-
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: white;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+        }
+        .form-container input[type="text"],
+        .form-container textarea,
+        .form-container input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            color: white;
+            outline: none;
+            box-sizing: border-box;
+            text-align:center;
+            background:rgba(255, 255, 255, 0.1);
+        }
+        .form-container textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
         .image img{
             width: 200px;
             height: 200px;
@@ -126,7 +99,6 @@
             font-size:40px;
 
         }
-
         .social {
     font-size: 20px;
     font-weight: italic;
@@ -140,7 +112,7 @@
     flex-direction: row; 
     align-items: center; 
     width: 200px; 
-    margin-left: 350px;
+    margin-left: 300px;
     margin-right: auto;
     position: relative;
 }
@@ -157,26 +129,42 @@
     margin-right: 10px; 
     margin-top:-20px
 }
-
+footer{
+    margin-top:30px;
+}
+        
+       
     </style>
 </head>
 <body>
     <div class="navbar">
-    <a href="{{ url('create') }}">Add Items</a>
-        <a href="{{url('categories')}}">Inventory List</a>
+        <a href="{{ url('categories') }}">Inventory List</a>
         <a href="{{ url('') }}">Home</a>
     </div>
 
-    <div class="gradient-container">
-        <h1>Hi, Welcome...!</h1>
-        <div class="con">
-            <div class="text">INVENTORY MANAGEMENT SYSTEM</div>
+    <div class="container">
+        <div class="form-container">
+            @if (session('status'))
+                <div class="alert alert-success">{{ session('status') }}</div>
+            @elseif ($errors->any())
+                <div class="alert alert-error">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <h2>ITEM DETAILS</h2>
+            <label for="name">Name</label>
+            <input value="{{ $category->name }}" type="text" id="name" name="name" readonly>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" readonly>{{ $category->description }}</textarea>
+
+            <label for="quantity">Quantity</label>
+            <input value="{{ $category->quantity }}" type="number" id="quantity" name="quantity" readonly>
         </div>
-        <div class="image-container">
-            <img src="/images/logo.jpeg" alt="Logo"/>
-        </div>
-        <div class="paragraph">
-        "An inventory item management web application is a comprehensive solution designed to streamline the process of tracking and managing inventory within a business. This application provides a user-friendly interface for adding, updating, and deleting inventory items, ensuring that all stock information is up-to-date and easily accessible. Key features include real-time inventory tracking, detailed item descriptions, and quantity management. Users can categorize items, set alerts for low stock levels, and generate reports to analyze inventory performance. The application supports multiple users with different access levels, ensuring that only authorized personnel can make changes. By automating inventory processes, the web application helps businesses reduce errors, optimize stock levels, and improve overall efficiency, leading to better resource management and cost savings."</div>
     </div>
     <footer>
         <div class="image">
@@ -203,6 +191,5 @@
         <div class="rule">@ All rights reserved. Created by - Siva Lakshanan </div>
         </div>
     </footer>
-
 </body>
 </html>
