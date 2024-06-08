@@ -24,7 +24,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Installation Process
 You may create Laravel projects by globally installing the Laravel installer via Composer:
 - composer global require laravel/installer
-- 
+  
 ## Laravel API installation
 - php artisan install:api
 
