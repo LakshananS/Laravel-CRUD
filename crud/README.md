@@ -6,11 +6,6 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
-## Installation Process
-You may create Laravel projects by globally installing the Laravel installer via Composer:
-- composer global require laravel/installer
-Laravel API installation
-- php artisan install:api
 
 ## About Laravel
 
@@ -25,6 +20,12 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
+
+## Installation Process
+You may create Laravel projects by globally installing the Laravel installer via Composer:
+- composer global require laravel/installer
+Laravel API installation
+- php artisan install:api
 
 ## Learning Laravel
 
