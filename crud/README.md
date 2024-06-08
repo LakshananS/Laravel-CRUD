@@ -6,6 +6,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+## Installation Process
+You may create Laravel projects by globally installing the Laravel installer via Composer:
+- composer global require laravel/installer
+Laravel API installation
+- php artisan install:api
 
 ## About Laravel
 
@@ -61,11 +66,7 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## Installation Process
-You may create Laravel projects by globally installing the Laravel installer via Composer:
-- composer global require laravel/installer
-Laravel API installation
-- php artisan install:api
+
 
 ## License
 
